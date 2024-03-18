@@ -34,7 +34,16 @@ dependencies = [
     "google-auth >= 2.14.1, < 3.0.dev0",
     "requests >= 2.18.0, < 3.0.0.dev0",
 ]
-
+extras = {
+    "grpc": [
+        "grpcio >= 1.33.2, < 2.0dev",
+        "grpcio >= 1.49.1, < 2.0dev; python_version>='3.11'",
+        "grpcio-status >= 1.33.2, < 2.0.dev0",
+        "grpcio-status >= 1.49.1, < 2.0.dev0; python_version>='3.11'",
+    ],
+    "grpcgcp": "grpcio-gcp >= 0.2.2, < 1.0.dev0",
+    "grpcio-gcp": "grpcio-gcp >= 0.2.2, < 1.0.dev0",
+}
 
 
 # Setup boilerplate below this line.
@@ -86,6 +95,7 @@ setuptools.setup(
     platforms="Posix; MacOS X; Windows",
     packages=packages,
     install_requires=dependencies,
+    extras_require=extras,
     python_requires=">=3.7",
     include_package_data=True,
     zip_safe=False,
